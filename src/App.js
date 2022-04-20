@@ -21,6 +21,12 @@ function App() {
   )
   return (
     <div >
+      <input 
+       type="range" 
+       min="1" 
+       max="10"
+       onChange={(e) => console.log(e.target.value)}/>
+
       <p>{state}</p>
 
       <button onClick={() => {dispatch('increment')}}>Add 1</button>
