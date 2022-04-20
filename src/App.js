@@ -14,6 +14,7 @@ function App() {
       <p>{state}</p>
 
       <button onClick={() => {dispatch(1)}}>Add 1</button>
+      <button onClick={() => dispatch(-1)}>Subtract 1</button>
     </div>
   );
 }
