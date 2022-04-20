@@ -1,7 +1,17 @@
 import { useReducer } from "react";
 
 function reducer(state, action) {
-  return state += action
+  switch (action) {
+    case 'increment':
+      return state += 1
+    case 'decrement':
+      return state -= 1
+    case 'reset':
+      return state = 0
+      default:
+        return state
+  }
+
 }
 
 function App() {
@@ -13,8 +23,9 @@ function App() {
     <div >
       <p>{state}</p>
 
-      <button onClick={() => {dispatch(1)}}>Add 1</button>
-      <button onClick={() => dispatch(-1)}>Subtract 1</button>
+      <button onClick={() => {dispatch('increment')}}>Add 1</button>
+      <button onClick={() => dispatch('decrement')}>Subtract 1</button>
+      <button onClick={() => dispatch('reset')}>reset</button>
     </div>
   );
 }
